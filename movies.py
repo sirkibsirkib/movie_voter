@@ -31,7 +31,8 @@ for p in participants:
 	for m in movies:
 		while True:
 			try:
-				print("rating of {} for {}? (give some number)".format(p, m))
+				sys.stdout.write("? rating of {} for {}:\t".format(p, m))
+				sys.stdout.flush()
 				r = float(input().strip())
 				#assert(r > 0.)
 				break
@@ -60,4 +61,4 @@ for m in movies:
 	scores[m] = score
 print("\n===================\nFINAL SCORES")
 for k,v in sorted(scores.items(), key=lambda x: -x[1]):
-	print("{}\t{}".format(v, k))
+	print("{}\t{}".format(round(v), k))
